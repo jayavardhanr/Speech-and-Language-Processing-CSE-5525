@@ -1,0 +1,8 @@
+0 1 EIGHT -
+1 2 EIGHT -
+1 3 NINE -
+1 4 TEN -
+1 5 JACK
+1 6 QUEEN -
+1 7 KING -
+1 8 ACE
