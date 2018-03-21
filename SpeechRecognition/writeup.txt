@@ -1,0 +1,37 @@
+CSE5525 Lab3 Writeup
+
+(Extract records.zip to the working directory)
+
+Commands:
+
+To compare the 'a' speakers vs the 'b' speakers using MFCC representations
+./main.py --templates digits/*a.wav --predict digits/*b.wav --transformation 0
+
+To compare the 'a' speakers vs the 'b' speakers using log spectrum representations
+./main.py --templates digits/*a.wav --predict digits/*b.wav --transformation 1
+
+Mandatory part:
+
+Part-0:
+(c) The MFCC scores are higher than log-spectrum scores, when we use delta and double-delta features along with the first 12 cepstrum features. 
+
+MFCC: For pairs which match , the scores range in 400000-500000. For pairs which don’t match, the scores range in 600000-700000.
+
+Log-spectrum: For pairs which match , the scores range in 50000-60000. For pairs which don’t match, the scores range in 80000-90000
+
+(d) Using the MFCC representation, the classifier is able to classify 10 out of the 11
+digits correctly. The classifier mistakes ‘4b’ to be ‘oa’. Plotting the Cepstrogram of
+‘4b’ and of ‘oa’. Both had one high energy part and a tail of lowering energies. 4a 
+had two high energy parts. This may be why the classifier misclassifies them.
+Using the log spectrum representation, the classifier is able to classify 11 out 
+of the 11 digits correctly.
+
+Extension 1:
+
+Using our own recordings against the 'a' templates performs poorly. Using Josh's 
+recordings, only 5 and 6 are correctly classified. We believed this may be due to the
+fact that the 'a' templates are all performed by a female speaker. This does 
+outperform the log spectrum representation, which only correctly classifies 5.
+Using all the data except one team members only correctly classified 1 out of 11
+of the digits correctly. Interestingly, all of the predicted templates were from the 
+same speaker (Matias).
